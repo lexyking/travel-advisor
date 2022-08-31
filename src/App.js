@@ -1,12 +1,14 @@
-import { CssBaseline, Grid } from '@mui/material'
+import { CssBaseline, Grid, createTheme } from '@mui/material'
+import { ThemeProvider } from '@mui/styles'
 
 import Header from './components/Header/Header'
 import List from './components/List/List'
 import Map from './components/Map/Map'
 
 const App = () => {
+  const theme = createTheme()
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header />
       <Grid container spacing={3} style={{ width: '100%'}}>
@@ -18,7 +20,7 @@ const App = () => {
         </Grid>
 
       </Grid>
-    </>
+    </ThemeProvider>
   )
 }
 
